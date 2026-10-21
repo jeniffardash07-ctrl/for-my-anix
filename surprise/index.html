@@ -1,0 +1,757 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="page">
+
+  <!-- Floating decorations -->
+  <div class="floating-heart heart-1">♡</div>
+  <div class="floating-heart heart-2">♡</div>
+  <div class="floating-heart heart-3">♡</div>
+
+  <!-- Main card -->
+  <main class="card">
+
+    <div class="tiny-label">A little something for you</div>
+
+    <h1>
+      I made something<br>
+      for you ♡
+    </h1>
+
+    <p class="subtitle">
+      Open this whenever you're ready...
+    </p>
+
+    <div class="cute-character">
+      🐻‍❄️
+    </div>
+
+    <button class="love-btn" onclick="loveBurst(this); showMessage()">
+      Open it
+      <span>♡</span>
+    </button>
+
+    <p class="small-note">
+      tap the button ↑
+    </p>
+
+  </main>
+
+  <section class="message-section" id="messageSection">
+
+  <div class="section-card question-card">
+
+    <h2>Will you see it?</h2>
+
+    
+<div class="love-sticker">
+  <img src="2nd one image.png" alt="A cute love sticker">
+</div>
+
+
+    <div class="answer-buttons">
+
+      <button class="answer-btn"
+              onclick="loveBurst(this); chooseYes()">
+        yes
+      </button>
+
+      <button class="answer-btn no-btn"
+              onclick="loveBurst(this); chooseNo()">
+        no
+      </button>
+
+    </div>
+
+    <p class="tiny-hint">choose carefully ♡</p>
+
+  </div>
+
+</section>
+<!-- PAGE 3 : NO REACTION -->
+<section class="message-section no-reaction-section" id="noReactionSection">
+
+  <div class="section-card no-reaction-card">
+
+    
+<img
+  src="no sticker.png"
+  alt="Cute angry sticker"
+  class="angry-sticker"
+/>
+
+    <p>
+      HOW DARE YOU 
+    </p>
+
+    <button class="answer-btn try-again-btn"
+            onclick="loveBurst(this); tryAgain()">
+      Try again ♡
+    </button>
+
+  </div>
+
+</section>
+</div>
+<!-- PAGE 4 : LOVE MENU -->
+<section class="message-section love-menu-section" id="loveMenuSection">
+
+  <div class="section-card love-menu-card">
+
+    <div class="question-label">a few things for you ♡</div>
+
+    <h2 class="menu-title">Becoz everything is about youhh</h2>
+
+    <div class="love-menu">
+
+      <button class="love-menu-item"
+      onclick="openPlaylist(); loveBurst(this)">
+        <span class="menu-icon">🎵</span>
+        <span>Playlist for youhh</span>
+        <span class="menu-arrow">♡</span>
+      </button>
+
+      <button class="love-menu-item"
+        onclick="openReasons(); loveBurst(this)">
+  <span class="menu-icon">🤍</span>
+  <span>Why i love youhh</span>
+  <span class="menu-arrow">♡</span>
+</button>
+
+      <button class="love-menu-item"
+        onclick="openSecretLock(); loveBurst(this)">
+  <span class="menu-icon">💌</span>
+  <span>A Secret between us</span>
+  <span class="menu-arrow">♡</span>
+</button>
+      <button class="love-menu-item"
+        onclick="openFinalMessage(); loveBurst(this)">
+  <span class="menu-icon">📝</span>
+  <span>Message for my भतार</span>
+  <span class="menu-arrow">♡</span>
+</button>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- PAGE : PLAYLIST -->
+<section class="message-section playlist-section" id="playlistSection">
+
+  <div class="section-card playlist-card">
+
+    <div class="question-label">a little playlist for you ♡</div>
+
+    <h2 class="playlist-title">playlist for youhh</h2>
+
+    <!-- SONG 1 -->
+    <div class="song-card">
+
+      <img
+        src="download (2).jpg"
+        class="song-image"
+        alt="Those eyes">
+
+      <div class="song-info">
+
+        <div class="song-top">
+          <div>
+            <h3>Kaafi hai na</h3>
+            <p> U r enough for me♡</p>
+          </div>
+
+          <button
+            class="play-btn"
+            onclick="toggleSong(0); loveBurst(this)">
+            ▶
+          </button>
+        </div>
+
+        <div class="progress-area">
+          <input
+            type="range"
+            class="progress-bar"
+            id="progress-0"
+            value="0"
+            min="0"
+            max="100"
+            oninput="seekSong(0, this.value)">
+        </div>
+
+        <div class="time-row">
+          <span id="current-0">0:00</span>
+          <span id="duration-0">0:00</span>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- SONG 2 -->
+    <div class="song-card">
+
+      <img
+        src="download.jpg"
+        class="song-image"
+        alt="Itni si baat he">
+
+      <div class="song-info">
+
+        <div class="song-top">
+          <div>
+            <h3>Itni si baat he</h3>
+            <p>♡</p>
+          </div>
+
+          <button
+            class="play-btn"
+            onclick="toggleSong(1); loveBurst(this)">
+            ▶
+          </button>
+        </div>
+
+        <div class="progress-area">
+          <input
+            type="range"
+            class="progress-bar"
+            id="progress-1"
+            value="0"
+            min="0"
+            max="100"
+            oninput="seekSong(1, this.value)">
+        </div>
+
+        <div class="time-row">
+          <span id="current-1">0:00</span>
+          <span id="duration-1">0:00</span>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- SONG 3 -->
+    <div class="song-card">
+
+      <img
+        src="download (1).jpg"
+        class="song-image"
+        alt="Iris">
+
+      <div class="song-info">
+
+        <div class="song-top">
+          <div>
+            <h3>Iris</h3>
+            <p>& u r my Iris</p>
+          </div>
+
+          <button
+            class="play-btn"
+            onclick="toggleSong(2); loveBurst(this)">
+            ▶
+          </button>
+        </div>
+
+        <div class="progress-area">
+          <input
+            type="range"
+            class="progress-bar"
+            id="progress-2"
+            value="0"
+            min="0"
+            max="100"
+            oninput="seekSong(2, this.value)">
+        </div>
+
+        <div class="time-row">
+          <span id="current-2">0:00</span>
+          <span id="duration-2">0:00</span>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <button
+      class="playlist-back"
+      onclick="backToMenu(); loveBurst(this)">
+      ♡ back to my little things
+    </button>
+
+  </div>
+
+</section>
+<!-- WHAT I LOVE IN YOU PAGE -->
+<section class="message-section" id="reasonsSection">
+
+  <div class="section-card reasons-card">
+
+    <div class="question-label">
+      a hundred little reasons
+    </div>
+
+    <h2>Some answers to ur question♡</h2>
+
+    <div class="reasons-list">
+
+      <p>1. Your smile.</p>
+      <p>2. Your eyes.</p>
+      <p>3. The way you look at me.</p>
+      <p>4. Your calmness.</p>
+      <p>5. Your patience.</p>
+      <p>6. Your kindness.</p>
+      <p>7. Your voice.</p>
+      <p>8. The way you say my name.</p>
+      <p>9. How you care.</p>
+      <p>10. How you stay.</p>
+      <p>11. Your honesty.</p>
+      <p>12. Your silence.</p>
+      <p>13. Your touch.</p>
+      <p>14. Your presence.</p>
+      <p>15. The way you listen.</p>
+      <p>16. How you see through me.</p>
+      <p>17. Your little jokes.</p>
+      <p>18. Your big heart.</p>
+      <p>19. The way you believe in me.</p>
+      <p>20. Your laugh.</p>
+      <p>21. Your warmth.</p>
+      <p>22. Your soul.</p>
+      <p>23. The way you see yourself.</p>
+      <p>24. Your cute jealousy.</p>
+      <p>25. The way you apologize.</p>
+      <p>26. How you make things better.</p>
+      <p>27. The way you forgive.</p>
+      <p>28. How you understand.</p>
+      <p>29. The way you got sulked.</p>
+      <p>30. Your flaws.</p>
+      <p>31. The way you forget things.</p>
+      <p>32. Your random texts.</p>
+      <p>33. How you hold my hand.</p>
+      <p>34. The way you miss me.</p>
+      <p>35. Your protectiveness.</p>
+      <p>36. Your dreams.</p>
+      <p>37. Your fear of loving me.</p>
+      <p>38. Your voice notes.</p>
+      <p>39. The way you make me laugh.</p>
+      <p>40. The way you look sleepy.</p>
+      <p>41. Your crazy ideas.</p>
+      <p>42. How you comfort me.</p>
+      <p>43. The way you respect me.</p>
+      <p>44. The way you look in my eyes.</p>
+      <p>45. The way we are together in my dreams.</p>
+      <p>46. Your shyness.</p>
+      <p>47. Your strength.</p>
+      <p>48. Your soft heart.</p>
+      <p>49. How you value small things.</p>
+      <p>50. How you say "I'm here".</p>
+      <p>51. How you wait.</p>
+      <p>52. How you explain calmly.</p>
+      <p>53. The way you say "I love you".</p>
+      <p>54. How you fight fair.</p>
+      <p>55. The way you get emotional.</p>
+      <p>56. The way you love music.</p>
+      <p>57. The way you love cinema.</p>
+      <p>58. Your insecurities.</p>
+      <p>59. Your growth.</p>
+      <p>60. Your attention to me.</p>
+      <p>61. Your stubbornness.</p>
+      <p>62. Your hands.</p>
+      <p>63. Your heartbeats.</p>
+      <p>64. How you let me be me.</p>
+      <p>65. How you accept my darkness.</p>
+      <p>66. The way you inspire me.</p>
+      <p>67. The way you appease.</p>
+      <p>68. How you look when you're mad.</p>
+      <p>69. How you fix broken things.</p>
+      <p>70. How you pray.</p>
+      <p>71. The way you laugh at my jokes.</p>
+      <p>72. The way you heal me.</p>
+      <p>73. The way you never give up despite everything.</p>
+      <p>74. Your inner child.</p>
+      <p>75. Your courage.</p>
+      <p>76. The way you show me hope.</p>
+      <p>77. The way you whisper.</p>
+      <p>78. The way you react to compliments.</p>
+      <p>79. The way you express love.</p>
+      <p>80. The way you talk about your day.</p>
+      <p>81. Your silence.</p>
+      <p>82. The way you get excited.</p>
+      <p>83. The way you trust me.</p>
+      <p>84. How you've changed me.</p>
+      <p>85. The way you know what I'm not saying.</p>
+      <p>86. Your sleepy voice.</p>
+      <p>87. The way you say goodnight.</p>
+      <p>88. The way you touch my soul.</p>
+      <p>89. The way you calm my anxiety.</p>
+      <p>90. The way you remind me of home.</p>
+      <p>91. The way you give me peace.</p>
+      <p>92. The way you console me.</p>
+      <p>93. The way you look at every perspectives.</p>
+      <p>94. The way you laugh with your eyes.</p>
+      <p>95. The way you ask if I've eaten.</p>
+      <p>96. The way you remember my pain.</p>
+      <p>97. The way you call me your wife.</p>
+      <p>98. How you stay in my prayers.</p>
+      <p>99. The way you love me even when I'm unlovable.</p>
+
+      <p class="final-reason">
+        100. Because you're you and that's enough. ♡
+      </p>
+
+    </div>
+
+<button
+  class="playlist-back"
+  onclick="backToReasonsMenu(); loveBurst(this)">
+  ♡ back to my little things
+</button>
+
+  </div>
+
+</section>
+<!-- SECRET LOCK PAGE -->
+
+<section class="message-section secret-lock-section"
+         id="secretLockSection">
+
+  <div class="section-card secret-lock-card">
+
+    <div class="lock-icon">🔒</div>
+
+    <div class="question-label">
+      a little secret ♡
+    </div>
+
+  
+
+    <input
+      type="text"
+      id="secretCode"
+      class="secret-input"
+      placeholder="enter the secret code"
+      autocomplete="off"
+      spellcheck="false"
+    >
+
+    <button
+      class="answer-btn unlock-btn"
+      onclick="checkSecretCode(); loveBurst(this)">
+      unlock ♡
+    </button>
+
+    <p class="secret-hint">
+      hint: <i>An emoji that means us</i>
+      (Dimag lagao mere budhu)
+    </p>
+
+    <p class="wrong-code" id="wrongCode">
+      not quite… try again ♡
+    </p>
+
+    <button
+      class="playlist-back"
+      onclick="backFromSecretLock(); loveBurst(this)">
+      ♡ back to my little things
+    </button>
+
+  </div>
+
+</section>
+
+<!-- SECRET LOVE GAME -->
+
+<section class="message-section secret-game-section"
+         id="secretGameSection">
+
+  <!-- STEP 1 : WISH -->
+
+  <div class="section-card secret-game-card wish-step"
+       id="wishStep">
+
+    <div class="game-small-label">
+      a little wish for us ♡
+    </div>
+
+    <h2 class="game-title">
+      One little wish...
+    </h2>
+
+    <p class="game-description">
+      If you could make one wish for us,<br>
+      what would you wish for?
+    </p>
+
+    <div class="wish-card">
+
+      <div class="wish-card-heart">♡</div>
+
+      <p class="wish-card-title">
+        A wish I want to make true with you
+      </p>
+
+      <textarea
+        id="wishInput"
+        class="wish-input"
+        placeholder="write your little wish here..."
+        maxlength="180"
+      ></textarea>
+
+      <div class="wish-count">
+        <span id="wishCount">0</span>/180
+      </div>
+
+    </div>
+
+    <p class="game-hint" id="wishHint">
+      take your time... this one is just for us ♡
+    </p>
+
+    <button
+      class="answer-btn game-next-btn"
+      onclick="goToLuckyWheel(); loveBurst(this)">
+      Next ♡
+    </button>
+
+  </div>
+
+
+  <!-- STEP 2 : LUCKY WHEEL -->
+
+  <div class="section-card secret-game-card wheel-step"
+       id="wheelStep">
+
+    
+    
+    <p class="game-description wheel-description">
+      Spin it and see what we're going to do
+      the next time we meet ♡
+    </p>
+
+    <div class="wheel-area">
+
+      <div class="wheel-pointer">
+        ▼
+      </div>
+
+      <div class="wheel-wrapper">
+
+        <div
+          class="lucky-wheel"
+          id="luckyWheel">
+
+          <div class="wheel-center">
+            ♡
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <button
+      class="answer-btn spin-btn"
+      id="spinWheelBtn"
+      onclick="spinLuckyWheel(); loveBurst(this)">
+      Spin ♡
+    </button>
+
+    <div
+      class="wheel-result"
+      id="wheelResult">
+
+      <span class="result-small">
+        your luck chose...
+      </span>
+
+      <strong id="wheelResultText"></strong>
+
+    </div>
+
+    <button
+      class="answer-btn game-next-btn wheel-next-btn"
+      id="wheelNextBtn"
+      onclick="goToSongStep(); loveBurst(this)">
+      Next ♡
+    </button>
+
+  </div>
+
+
+  <!-- STEP 3 : OUR SONG -->
+
+  <div class="section-card secret-game-card song-step"
+       id="songStep">
+
+    <div class="game-small-label">
+      one last little thing ♡
+    </div>
+
+    <h2 class="game-title">
+      Our song
+    </h2>
+
+    <p class="game-description">
+      Choose one song that you want to
+      dedicate to the two of us.
+    </p>
+
+    <div class="song-heart">
+      🎵
+    </div>
+
+    <div class="song-input-card">
+
+      <span>
+        this song is ours ♡
+      </span>
+
+      <input
+        type="text"
+        id="ourSongInput"
+        class="our-song-input"
+        placeholder="song name..."
+        maxlength="100"
+        autocomplete="off"
+      >
+
+    </div>
+
+    <p class="song-confirmation"
+       id="songConfirmation">
+      This one is ours now ♡
+    </p>
+
+    <button
+      class="answer-btn save-song-btn"
+      onclick="saveOurSong(); loveBurst(this)">
+      Save our song ♡
+    </button>
+
+    <button
+      class="playlist-back secret-game-back"
+      onclick="backFromSecretGame(); loveBurst(this)">
+      ♡ back to my little things
+    </button>
+
+  </div>
+
+
+  <!-- FINAL MINI SUMMARY -->
+
+  <div class="section-card secret-game-card game-summary-step"
+       id="gameSummaryStep">
+
+    <div class="game-small-label">
+      our little plans ♡
+    </div>
+
+    <h2 class="game-title">
+      It's a date.
+    </h2>
+
+    <div class="summary-box">
+
+      <div class="summary-item">
+        <span class="summary-label">your wish</span>
+        <p id="summaryWish"></p>
+      </div>
+
+      <div class="summary-item">
+        <span class="summary-label">your lucky plan</span>
+        <p id="summaryWheel"></p>
+      </div>
+
+      <div class="summary-item">
+        <span class="summary-label">our song</span>
+        <p id="summarySong"></p>
+      </div>
+
+    </div>
+
+    <p class="summary-love">
+      Now we just have to make<br>
+      these little things real. ♡
+    </p>
+
+    <button
+      class="playlist-back secret-game-back"
+      onclick="backFromSecretGame(); loveBurst(this)">
+      ♡ back to my little things
+    </button>
+
+  </div>
+
+</section>
+<!-- FINAL MESSAGE PAGE -->
+
+<section id="finalMessageSection"
+         class="message-section final-message-section">
+
+  <div class="section-card final-message-card">
+
+    <div class="question-label">
+      just for you ♡
+    </div>
+
+    <h2>For my Anix</h2>
+
+    <div class="final-message-text">
+
+      <p>You’ll always be loved.</p>
+
+      <p>You’ll always have me by your side.</p>
+
+      <p>I'll always believe in you.</p>
+      <p>& I’ll always be proud of you my hero</p>
+
+      <p>I love you. So, so much. Forever & ever.</p>
+
+    </div>
+
+    <button
+  class="answer-btn final-love-btn"
+  onclick="startCinematicFinal(this)">
+  I love you ♡
+</button>
+
+  </div>
+
+</section>
+<!-- CINEMATIC FINAL SCREEN -->
+
+<section id="cinematicFinalSection" class="cinematic-final-section">
+
+  <div id="flowerSpiral"></div>
+
+  <div class="final-white-flash"></div>
+
+  <div class="last-card" id="lastCard">
+
+    <div class="last-message" id="lastMessage"></div>
+
+    <div class="signature" id="signature">
+  <span id="signatureText"></span>
+  <br>
+  <span id="signatureName"></span>
+</div>
+
+  </div>
+
+</section>
+<!-- Heart burst container -->
+<div id="burst-container"></div>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,2461 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500&family=Parisienne&display=swap');
+
+:root {
+  --blue: #dcefff;
+  --blue-dark: #9bc9e8;
+  --blue-deep: #6fa9d0;
+  --white: #ffffff;
+  --text: #334a5c;
+  --soft-text: #718494;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--blue);
+  color: var(--text);
+  min-height: 100vh;
+  font-family: "DM Sans", sans-serif;
+  overflow-x: hidden;
+}
+
+/* ---------------- PAGE ---------------- */
+
+.page {
+  min-height: 100vh;
+  padding: 35px 20px 70px;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+/* ---------------- MAIN CARD ---------------- */
+
+.card {
+  width: min(100%, 430px);
+  min-height: 620px;
+  margin: 30px auto 0;
+
+  background: rgba(255,255,255,0.96);
+
+  border-radius: 28px;
+
+  padding: 55px 28px 35px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  position: relative;
+
+  box-shadow:
+    0 20px 60px rgba(73, 126, 160, 0.15);
+
+  border: 1px solid rgba(255,255,255,0.9);
+
+  animation: cardAppear 1s ease;
+}
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------------- TEXT ---------------- */
+
+.tiny-label {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--blue-deep);
+  margin-bottom: 25px;
+}
+
+h1 {
+  font-family: "Parisienne", cursive;
+  font-size: clamp(40px, 14vw, 40px);
+  line-height: 0.95;
+  font-weight: 400;
+  color: #405b6d;
+}
+
+.subtitle {
+  margin-top: 28px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 21px;
+  color: var(--soft-text);
+  font-style: italic;
+}
+
+/* ---------------- CHARACTER ---------------- */
+
+.cute-character {
+  font-size: 70px;
+  margin: 30px 0 25px;
+
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+/* ---------------- BUTTON ---------------- */
+
+button {
+  border: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.love-btn {
+  background: var(--blue);
+
+  color: #527a96;
+
+  padding: 15px 30px;
+
+  border-radius: 100px;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+
+  box-shadow:
+    0 8px 20px rgba(111,169,208,0.18);
+
+  transition: 0.25s ease;
+}
+
+.love-btn span {
+  margin-left: 7px;
+}
+
+.love-btn:active {
+  transform: scale(0.93);
+}
+
+.love-btn:hover {
+  background: #cce7fa;
+}
+
+.small-note {
+  margin-top: 14px;
+  font-size: 10px;
+  color: #a5b4bf;
+  letter-spacing: 1px;
+}
+
+/* ---------------- FLOATING HEARTS ---------------- */
+
+.floating-heart {
+  position: absolute;
+  color: rgba(111,169,208,0.45);
+  font-size: 35px;
+  pointer-events: none;
+}
+
+.heart-1 {
+  top: 90px;
+  left: 8%;
+  animation: float 4s infinite;
+}
+
+.heart-2 {
+  top: 180px;
+  right: 8%;
+  font-size: 25px;
+  animation: float 3.5s infinite 0.5s;
+}
+
+.heart-3 {
+  bottom: 80px;
+  left: 12%;
+  font-size: 22px;
+  animation: float 4.5s infinite 1s;
+}
+
+/* ---------------- SECOND SECTION ---------------- */
+
+.message-section {
+  width: min(100%, 430px);
+  margin: 80px auto 0;
+
+  opacity: 0;
+  transform: translateY(30px);
+
+  transition: 1s ease;
+
+  pointer-events: none;
+}
+
+.message-section.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.section-card {
+  background: white;
+  border-radius: 28px;
+  padding: 45px 28px;
+
+  text-align: center;
+
+  box-shadow:
+    0 20px 60px rgba(73,126,160,0.14);
+}
+
+.section-number {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--blue-deep);
+}
+
+h2 {
+  font-family: "Parisienne", cursive;
+  font-size: 30px;
+  font-weight: 400;
+  margin: 15px 0 20px;
+}
+
+.section-card p {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+  line-height: 1.55;
+  color: var(--soft-text);
+}
+
+.next-btn {
+  margin-top: 28px;
+
+  padding: 13px 25px;
+
+  background: var(--blue);
+  color: #527a96;
+
+  border-radius: 100px;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
+}
+
+/* ---------------- HEART BURST ---------------- */
+
+#burst-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.burst-heart {
+  position: fixed;
+
+  font-size: 18px;
+
+  animation: burst 900ms ease-out forwards;
+
+  pointer-events: none;
+}
+
+@keyframes burst {
+
+  0% {
+    opacity: 1;
+    transform:
+      translate(-50%, -50%)
+      scale(0.4)
+      rotate(0deg);
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform:
+      translate(
+        calc(-50% + var(--x)),
+        calc(-50% + var(--y))
+      )
+      scale(1.25)
+      rotate(var(--rotation));
+  }
+}
+
+/* ---------------- SMALL PHONES ---------------- */
+
+@media (max-width: 380px) {
+
+  .card {
+    min-height: 580px;
+    padding: 45px 20px;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  .cute-character {
+    font-size: 60px;
+  }
+}
+/* QUESTION SCREEN */
+
+.question-card {
+  min-height: 500px;
+  justify-content: center;
+}
+
+.question-label {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--blue-deep);
+  margin-bottom: 18px;
+}
+
+.question-card h2 {
+  font-size: 40px;
+  margin: 0;
+}
+
+.cute-couple {
+  font-size: 58px;
+  margin: 35px 0;
+  animation: coupleFloat 3s ease-in-out infinite;
+}
+
+@keyframes coupleFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+.answer-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  width: 100%;
+}
+
+.answer-btn {
+  min-width: 105px;
+  padding: 13px 24px;
+
+  background: var(--blue);
+  color: #527a96;
+
+  border: 1px solid rgba(111,169,208,0.25);
+  border-radius: 100px;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 21px;
+
+  transition: 0.25s ease;
+}
+
+.answer-btn:active {
+  transform: scale(0.90);
+}
+
+.answer-btn:hover {
+  background: #cce7fa;
+}
+
+.tiny-hint {
+  margin-top: 20px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: #a5b4bf;
+}
+
+.message-section {
+  position: fixed !important;
+  inset: 0 !important;
+
+  width: 100vw !important;
+  height: 100vh !important;
+
+  margin: 0 !important;
+  padding: 20px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  box-sizing: border-box;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: scale(1.03);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.message-section.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: scale(1);
+}
+
+.section-card {
+  margin: 0 !important;
+}
+/* ---------------- PAGE 3 : NO REACTION ---------------- */
+
+.no-reaction-section {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: scale(1.04);
+}
+
+.no-reaction-section.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: scale(1);
+}
+
+.no-reaction-card {
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.angry-emoji {
+  font-size: 62px;
+  margin-bottom: 15px;
+}
+
+.no-reaction-card h2 {
+  font-size: 40px;
+  color: #405b6d;
+  margin: 0 0 18px;
+}
+
+.no-reaction-card p {
+  margin: 0;
+}
+
+.try-again-btn {
+  margin-top: 28px;
+}
+/* ---------------- LOVE MENU ---------------- */
+
+.love-menu-section {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: scale(1.04);
+}
+
+.love-menu-section.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: scale(1);
+}
+
+.love-menu-card {
+  min-height: 500px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-title {
+  font-family: "Parisienne", cursive;
+  font-size: 30px;
+  font-weight: 400;
+  color: #405b6d;
+  margin: 0 0 28px;
+}
+
+.love-menu {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.love-menu-item {
+  width: 100%;
+  min-height: 65px;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 12px 17px;
+
+  background: var(--blue);
+  color: #527a96;
+
+  border: 1px solid rgba(111,169,208,0.20);
+  border-radius: 18px;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+
+  text-align: left;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.love-menu-item:active {
+  transform: scale(0.97);
+}
+
+.love-menu-item:hover {
+  background: #cce7fa;
+  box-shadow: 0 8px 20px rgba(111,169,208,0.12);
+}
+
+.menu-icon {
+  font-size: 25px;
+  width: 30px;
+  text-align: center;
+}
+
+.menu-arrow {
+  margin-left: auto;
+  font-size: 20px;
+}
+/* ---------------- PLAYLIST PAGE ---------------- */
+
+.playlist-section {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: scale(1.04);
+}
+
+.playlist-section.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: scale(1);
+}
+
+.playlist-card {
+  width: min(100%, 430px);
+  min-height: 500px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 35px 22px;
+}
+
+.playlist-title {
+  font-size: 48px;
+  margin: 0 0 25px;
+}
+
+/* SONG CARD */
+
+.song-card {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 12px;
+
+  margin-bottom: 12px;
+
+  background: #f7fbff;
+
+  border: 1px solid rgba(111,169,208,0.18);
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 8px 25px rgba(73,126,160,0.08);
+}
+
+/* IMAGE */
+
+.song-image {
+  width: 68px;
+  height: 68px;
+
+  flex-shrink: 0;
+
+  object-fit: cover;
+
+  border-radius: 14px;
+}
+
+/* INFO */
+
+.song-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.song-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 8px;
+}
+
+.song-top h3 {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 20px;
+  font-weight: 600;
+
+  color: #405b6d;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.song-top p {
+  font-size: 10px !important;
+
+  margin-top: 2px;
+
+  color: #91a2af;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* PLAY BUTTON */
+
+.play-btn {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--blue);
+
+  color: #527a96;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 14px;
+
+  transition: 0.25s ease;
+}
+
+.play-btn:active {
+  transform: scale(0.88);
+}
+
+/* PROGRESS */
+
+.progress-area {
+  width: 100%;
+  margin-top: 7px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 3px;
+
+  accent-color: #9bc9e8;
+
+  cursor: pointer;
+}
+
+/* TIME */
+
+.time-row {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 3px;
+
+  font-size: 8px;
+
+  color: #9aaab6;
+}
+
+/* BACK */
+
+.playlist-back {
+  margin-top: 15px;
+
+  padding: 10px 20px;
+
+  background: transparent;
+
+  color: #718494;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 16px;
+}
+
+.playlist-back:active {
+  transform: scale(0.95);
+}
+/* ---------------- 100 REASONS PAGE ---------------- */
+
+.reasons-card {
+  width: min(100%, 430px);
+  max-height: 88vh;
+  overflow-y: auto;
+  padding: 40px 25px 45px;
+  
+  scrollbar-width: thin;
+  scrollbar-color: var(--blue-dark) transparent;
+}
+
+.reasons-card h2 {
+  font-size: 52px;
+  line-height: 1;
+  margin-bottom: 28px;
+}
+
+.reasons-list {
+  width: 100%;
+  text-align: left;
+}
+
+.reasons-list p {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 19px;
+  line-height: 1.35;
+  color: var(--text);
+  margin: 0;
+  padding: 8px 12px;
+  border-bottom: 1px solid rgba(111,169,208,0.12);
+}
+
+.reasons-list p:nth-child(even) {
+  background: rgba(220,239,255,0.25);
+  border-radius: 8px;
+}
+
+.final-reason {
+  margin-top: 18px !important;
+  padding: 18px 14px !important;
+
+  background: var(--blue) !important;
+
+  border: 2px solid var(--blue-dark) !important;
+  border-radius: 16px;
+
+  font-family: "Cormorant Garamond", serif !important;
+  font-size: 23px !important;
+  font-weight: 700;
+  line-height: 1.35 !important;
+  text-align: center;
+
+  color: #405b6d !important;
+
+  box-shadow: 0 8px 25px rgba(111,169,208,0.15);
+}
+/* ---------------- REASONS PAGE ---------------- */
+
+.reasons-section {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: scale(1.04);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reasons-section.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: scale(1);
+}
+
+/* ---------------- FINAL MESSAGE PAGE ---------------- */
+
+.final-message-section {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: scale(1.04);
+}
+
+.final-message-section.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: scale(1);
+}
+
+.final-message-card {
+  width: min(100%, 430px);
+  min-height: 500px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 50px 28px;
+}
+
+.final-message-card h2 {
+  font-size: 55px;
+  margin: 12px 0 30px;
+}
+
+.final-message-text {
+  width: 100%;
+  text-align: center;
+}
+
+.final-message-text p {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 23px;
+  line-height: 1.5;
+
+  color: var(--text);
+
+  margin: 5px 0;
+}
+
+.final-love-btn {
+  margin-top: 32px;
+}
+/* ---------------- I LOVE YOU BUTTON ---------------- */
+
+.love-you-btn {
+  margin-top: 25px;
+
+  padding: 13px 28px;
+
+  background: #f9dce5;
+  color: #9b6174;
+
+  border: 1px solid #f1c4d1;
+  border-radius: 100px;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+
+  box-shadow: 0 8px 20px rgba(220, 150, 170, 0.18);
+
+  transition: all 0.25s ease;
+}
+
+.love-you-btn:hover {
+  background: #f6d1dc;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(220, 150, 170, 0.22);
+}
+
+.love-you-btn:active {
+  transform: scale(0.94);
+}
+/* =========================================================
+   CINEMATIC FINAL FLOWER SCREEN
+   ========================================================= */
+
+.cinematic-final-section {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background: #ffffff;
+
+  z-index: 10000;
+
+  overflow: hidden;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition: opacity 0.8s ease;
+}
+
+.cinematic-final-section.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+
+/* ---------------------------------------------------------
+   FLOWER SPIRAL
+   --------------------------------------------------------- */
+
+#flowerSpiral {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  pointer-events: none;
+
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.cinematic-final-section.active #flowerSpiral {
+  opacity: 1;
+}
+
+
+/* Individual flowers */
+
+.spiral-flower {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform:
+    translate(-50%, -50%)
+    translate(var(--start-x), var(--start-y))
+    scale(0.2)
+    rotate(0deg);
+
+  font-size: var(--flower-size);
+
+  line-height: 1;
+
+  opacity: 0;
+
+  filter:
+    drop-shadow(0 4px 8px rgba(120, 160, 190, 0.12));
+
+  animation:
+    flowerSpiralMove var(--duration) cubic-bezier(.16,.72,.18,1) forwards;
+
+  animation-delay: var(--delay);
+
+  will-change: transform, opacity;
+}
+
+
+/* Soft flower variation */
+
+.spiral-flower:nth-child(3n) {
+  font-size: calc(var(--flower-size) * 0.72);
+}
+
+.spiral-flower:nth-child(4n) {
+  font-size: calc(var(--flower-size) * 1.25);
+}
+
+
+/* ---------------------------------------------------------
+   WHITE WASH
+   --------------------------------------------------------- */
+
+.final-white-flash {
+  position: absolute;
+  inset: 0;
+
+  background: #ffffff;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  z-index: 5;
+}
+
+.cinematic-final-section.flash .final-white-flash {
+  animation: whiteWash 1.8s ease forwards;
+}
+
+@keyframes whiteWash {
+
+  0% {
+    opacity: 0;
+  }
+
+  45% {
+    opacity: 0.35;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+
+}
+
+
+/* ---------------------------------------------------------
+   FLOWER ANIMATION
+   --------------------------------------------------------- */
+
+@keyframes flowerSpiralMove {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      translate(-50%, -50%)
+      translate(var(--start-x), var(--start-y))
+      scale(0.15)
+      rotate(0deg);
+  }
+
+  12% {
+    opacity: 0.95;
+  }
+
+  55% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.92;
+
+    transform:
+      translate(-50%, -50%)
+      translate(var(--end-x), var(--end-y))
+      scale(1)
+      rotate(var(--rotation));
+  }
+
+}
+
+
+/* ---------------------------------------------------------
+   FINAL CARD
+   --------------------------------------------------------- */
+
+.last-card {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: min(88%, 430px);
+
+  min-height: 270px;
+
+  transform:
+    translate(-50%, -50%)
+    translateY(25px)
+    scale(0.94);
+
+  background:
+    linear-gradient(
+      145deg,
+      #eef8ff,
+      #dcefff
+    );
+
+  border: 1px solid rgba(155, 201, 232, 0.45);
+
+  border-radius: 30px;
+
+  padding: 55px 30px 45px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  box-shadow:
+    0 25px 80px rgba(73, 126, 160, 0.16),
+    inset 0 1px 0 rgba(255,255,255,0.9);
+
+  opacity: 0;
+
+  z-index: 10;
+
+  transition:
+    opacity 1.2s ease,
+    transform 1.2s cubic-bezier(.16,.72,.18,1);
+}
+
+
+/* Card appears only after flowers */
+
+.cinematic-final-section.card-visible .last-card {
+
+  opacity: 1;
+
+  transform:
+    translate(-50%, -50%)
+    translateY(0)
+    scale(1);
+
+}
+
+
+/* ---------------------------------------------------------
+   TYPEWRITER MESSAGE
+   --------------------------------------------------------- */
+
+.last-message {
+
+  min-height: 48px;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: clamp(25px, 6vw, 31px);
+
+  color: #405b6d;
+
+  letter-spacing: 0.3px;
+
+  line-height: 1.4;
+
+  position: relative;
+
+}
+
+
+/* Typewriter cursor */
+
+.last-message.typing::after {
+
+  content: "";
+
+  display: inline-block;
+
+  width: 1px;
+
+  height: 1.1em;
+
+  margin-left: 4px;
+
+  vertical-align: middle;
+
+  background: #6fa9d0;
+
+  animation: typingCursor 0.8s infinite;
+
+}
+
+@keyframes typingCursor {
+
+  0%, 45% {
+    opacity: 1;
+  }
+
+  46%, 100% {
+    opacity: 0;
+  }
+
+}
+
+
+/* ---------------------------------------------------------
+   SIGNATURE
+   --------------------------------------------------------- */
+/* ---------------- SIGNATURE ---------------- */
+
+.signature {
+  margin-top: 30px;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 19px;
+
+  line-height: 1.4;
+  color: #718494;
+
+  opacity: 0;
+  transform: translateY(10px);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.signature.signature-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#signatureText {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 19px;
+}
+
+#signatureName {
+  display: inline-block;
+
+  margin-top: 3px;
+
+  font-family: "Parisienne", cursive;
+  font-size: 34px;
+
+  color: #527a96;
+}
+/* =========================================================
+   SECRET LOCK PAGE
+   ========================================================= */
+
+.secret-lock-card {
+  min-height: 540px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 45px 28px;
+}
+
+.lock-icon {
+  font-size: 55px;
+  margin-bottom: 12px;
+
+  animation: lockFloat 3s ease-in-out infinite;
+}
+
+@keyframes lockFloat {
+
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+
+}
+
+.secret-lock-card h2 {
+  font-size: 55px;
+  margin: 5px 0 15px;
+}
+
+.lock-text {
+  max-width: 330px;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+
+  line-height: 1.5;
+  color: var(--soft-text);
+
+  margin-bottom: 25px;
+}
+
+.secret-input {
+  width: 100%;
+  max-width: 300px;
+
+  padding: 14px 18px;
+
+  border: 1px solid rgba(111,169,208,0.35);
+  border-radius: 100px;
+
+  outline: none;
+
+  background: #f7fbff;
+
+  color: #405b6d;
+
+  text-align: center;
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 15px;
+
+  transition: 0.3s ease;
+}
+
+.secret-input::placeholder {
+  color: #9aabb8;
+}
+
+.secret-input:focus {
+  border-color: var(--blue-dark);
+
+  box-shadow:
+    0 0 0 4px rgba(155,201,232,0.12);
+}
+
+.secret-input.wrong {
+  animation: wrongShake 0.45s ease;
+  border-color: #d99aaa;
+}
+
+@keyframes wrongShake {
+
+  0%, 100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-7px);
+  }
+
+  75% {
+    transform: translateX(7px);
+  }
+
+}
+
+.unlock-btn {
+  margin-top: 15px;
+}
+
+.secret-hint {
+  margin-top: 18px;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 15px;
+
+  color: #91a2af;
+}
+
+.wrong-code {
+  margin-top: 10px;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 15px !important;
+
+  color: #b47788 !important;
+
+  opacity: 0;
+  transform: translateY(-4px);
+
+  transition: 0.3s ease;
+}
+
+.wrong-code.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   SECRET LOVE PAGE
+   ========================================================= */
+
+.secret-love-card {
+  min-height: 500px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 50px 28px;
+}
+
+.secret-love-card h2 {
+  font-size: 58px;
+  margin: 10px 0 25px;
+}
+
+.secret-love-card p {
+  max-width: 330px;
+}
+
+/* =========================================================
+   SECRET LOVE GAME
+   ========================================================= */
+
+.secret-game-section {
+  background: rgba(220,239,255,0.35);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: scale(1.03);
+
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.secret-game-section.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+
+  transform: scale(1);
+}
+
+
+/* ---------------------------------------------------------
+   GAME CARD
+   --------------------------------------------------------- */
+
+.secret-game-card {
+  width: min(100%, 430px);
+  min-height: 590px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 42px 25px;
+
+  position: relative;
+}
+
+
+/* All steps hidden initially */
+
+.wish-step,
+.wheel-step,
+.song-step,
+.game-summary-step {
+  display: none;
+}
+
+
+/* Only active step */
+
+.secret-game-card.game-active {
+  display: flex;
+}
+
+
+/* ---------------------------------------------------------
+   GAME TEXT
+   --------------------------------------------------------- */
+
+.game-small-label {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+
+  color: var(--blue-deep);
+
+  margin-bottom: 15px;
+}
+
+.game-title {
+  font-family: "Parisienne", cursive;
+
+  font-size: 52px;
+
+  font-weight: 400;
+
+  color: #405b6d;
+
+  margin: 0 0 16px;
+
+  line-height: 1;
+}
+
+.game-description {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 20px;
+
+  line-height: 1.45;
+
+  color: var(--soft-text);
+
+  margin-bottom: 25px;
+}
+
+
+/* ---------------------------------------------------------
+   WISH CARD
+   --------------------------------------------------------- */
+
+.wish-card {
+  width: 100%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #fafdff,
+      #eef8ff
+    );
+
+  border:
+    1px solid rgba(155,201,232,0.45);
+
+  border-radius: 24px;
+
+  padding: 25px 20px 18px;
+
+  box-shadow:
+    0 12px 35px rgba(73,126,160,0.10);
+
+  position: relative;
+}
+
+.wish-card-heart {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 27px;
+
+  color: var(--blue-deep);
+
+  margin-bottom: 7px;
+}
+
+.wish-card-title {
+  font-family: "Cormorant Garamond", serif !important;
+
+  font-size: 20px !important;
+
+  color: #405b6d !important;
+
+  margin-bottom: 15px !important;
+}
+
+.wish-input {
+  width: 100%;
+
+  min-height: 120px;
+
+  resize: none;
+
+  outline: none;
+
+  border: 1px solid rgba(111,169,208,0.28);
+
+  border-radius: 17px;
+
+  background: rgba(255,255,255,0.8);
+
+  padding: 15px;
+
+  color: #405b6d;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 19px;
+
+  line-height: 1.4;
+
+  text-align: center;
+
+  transition: 0.25s ease;
+}
+
+.wish-input::placeholder {
+  color: #a5b4bf;
+
+  font-style: italic;
+}
+
+.wish-input:focus {
+  border-color: var(--blue-dark);
+
+  box-shadow:
+    0 0 0 4px rgba(155,201,232,0.12);
+}
+
+.wish-count {
+  text-align: right;
+
+  margin-top: 5px;
+
+  font-size: 9px;
+
+  color: #9aabb8;
+}
+
+
+/* ---------------------------------------------------------
+   GAME HINT
+   --------------------------------------------------------- */
+
+.game-hint {
+  font-family: "Cormorant Garamond", serif !important;
+
+  font-size: 14px !important;
+
+  color: #91a2af !important;
+
+  margin-top: 15px !important;
+}
+
+
+/* ---------------------------------------------------------
+   NEXT BUTTON
+   --------------------------------------------------------- */
+
+.game-next-btn {
+  margin-top: 20px;
+
+  min-width: 125px;
+}
+
+.game-next-btn:disabled {
+  opacity: 0.45;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   LUCKY WHEEL
+   ========================================================= */
+
+.wheel-description {
+  margin-bottom: 8px;
+}
+
+.wheel-area {
+  position: relative;
+
+  width: 290px;
+  height: 290px;
+
+  margin: 5px auto 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wheel-wrapper {
+  width: 260px;
+  height: 260px;
+
+  border-radius: 50%;
+
+  padding: 5px;
+
+  background: white;
+
+  box-shadow:
+    0 15px 35px rgba(73,126,160,0.18);
+}
+
+.lucky-wheel {
+  width: 100%;
+  height: 100%;
+
+  border-radius: 50%;
+
+  position: relative;
+
+  overflow: hidden;
+
+  background:
+    conic-gradient(
+      #dcefff 0deg 36deg,
+      #ffffff 36deg 72deg,
+      #dcefff 72deg 108deg,
+      #ffffff 108deg 144deg,
+      #dcefff 144deg 180deg,
+      #ffffff 180deg 216deg,
+      #dcefff 216deg 252deg,
+      #ffffff 252deg 288deg,
+      #dcefff 288deg 324deg,
+      #ffffff 324deg 360deg
+    );
+
+  border: 2px solid rgba(111,169,208,0.35);
+
+  transition:
+    transform 4.5s cubic-bezier(.12,.75,.15,1);
+
+  box-shadow:
+    inset 0 0 0 4px rgba(255,255,255,0.65);
+}
+
+.wheel-center {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 48px;
+  height: 48px;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: white;
+
+  border: 1px solid rgba(111,169,208,0.3);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 5;
+
+  color: #6fa9d0;
+
+  font-size: 23px;
+
+  box-shadow:
+    0 5px 15px rgba(73,126,160,0.15);
+}
+
+
+/* Wheel labels */
+
+.wheel-label {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 75px;
+
+  margin-left: -37.5px;
+  margin-top: -10px;
+
+  text-align: center;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 11px;
+
+  line-height: 1.05;
+
+  color: #527a96;
+
+  font-weight: 600;
+
+  transform:
+    rotate(var(--angle))
+    translateY(-87px)
+    rotate(calc(var(--angle) * -1));
+
+  transform-origin: center;
+
+  pointer-events: none;
+}
+
+
+/* Pointer */
+
+.wheel-pointer {
+  position: absolute;
+
+  top: -1px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  z-index: 20;
+
+  color: #527a96;
+
+  font-size: 22px;
+
+  line-height: 1;
+}
+
+
+/* ---------------------------------------------------------
+   SPIN BUTTON
+   --------------------------------------------------------- */
+
+.spin-btn {
+  margin-top: 3px;
+
+  min-width: 120px;
+}
+
+.spin-btn.spinning {
+  pointer-events: none;
+
+  opacity: 0.55;
+}
+
+
+/* ---------------------------------------------------------
+   WHEEL RESULT
+   --------------------------------------------------------- */
+
+.wheel-result {
+  width: 100%;
+
+  min-height: 66px;
+
+  margin-top: 15px;
+
+  padding: 10px 15px;
+
+  border-radius: 18px;
+
+  background: #f7fbff;
+
+  border: 1px solid rgba(111,169,208,0.18);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+
+  transform: translateY(8px);
+
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+.wheel-result.show {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+.result-small {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 13px;
+
+  color: #91a2af;
+
+  font-style: italic;
+}
+
+#wheelResultText {
+  margin-top: 3px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 22px;
+
+  color: #405b6d;
+
+  font-weight: 600;
+}
+
+.wheel-next-btn {
+  display: none;
+}
+
+.wheel-next-btn.show {
+  display: inline-block;
+}
+
+
+/* =========================================================
+   SONG STEP
+   ========================================================= */
+
+.song-heart {
+  font-size: 55px;
+
+  margin: 10px 0 18px;
+
+  animation: songFloat 3s ease-in-out infinite;
+}
+
+@keyframes songFloat {
+
+  0%,100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+
+}
+
+.song-input-card {
+  width: 100%;
+
+  padding: 20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #fafdff,
+      #eef8ff
+    );
+
+  border-radius: 22px;
+
+  border: 1px solid rgba(155,201,232,0.4);
+
+  box-shadow:
+    0 12px 30px rgba(73,126,160,0.09);
+}
+
+.song-input-card span {
+  display: block;
+
+  margin-bottom: 12px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 18px;
+
+  color: #718494;
+}
+
+.our-song-input {
+  width: 100%;
+
+  padding: 14px 17px;
+
+  border-radius: 100px;
+
+  border: 1px solid rgba(111,169,208,0.3);
+
+  background: white;
+
+  outline: none;
+
+  text-align: center;
+
+  color: #405b6d;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 20px;
+
+  transition: 0.25s ease;
+}
+
+.our-song-input::placeholder {
+  color: #a5b4bf;
+
+  font-style: italic;
+}
+
+.our-song-input:focus {
+  border-color: var(--blue-dark);
+
+  box-shadow:
+    0 0 0 4px rgba(155,201,232,0.12);
+}
+
+.save-song-btn {
+  margin-top: 22px;
+}
+
+.song-confirmation {
+  opacity: 0;
+
+  transform: translateY(5px);
+
+  margin-top: 12px !important;
+
+  font-family: "Cormorant Garamond", serif !important;
+
+  font-size: 17px !important;
+
+  color: #6fa9d0 !important;
+
+  transition: 0.4s ease;
+}
+
+.song-confirmation.show {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   SUMMARY
+   ========================================================= */
+
+.summary-box {
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+
+  margin-top: 8px;
+}
+
+.summary-item {
+  background: #f7fbff;
+
+  border:
+    1px solid rgba(111,169,208,0.16);
+
+  border-radius: 18px;
+
+  padding: 13px 16px;
+
+  text-align: left;
+}
+
+.summary-label {
+  display: block;
+
+  font-size: 9px;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  color: var(--blue-deep);
+
+  margin-bottom: 3px;
+}
+
+.summary-item p {
+  font-family: "Cormorant Garamond", serif !important;
+
+  font-size: 19px !important;
+
+  line-height: 1.25 !important;
+
+  color: #405b6d !important;
+
+  margin: 0 !important;
+
+  word-break: break-word;
+}
+
+.summary-love {
+  margin-top: 20px !important;
+
+  font-size: 18px !important;
+}
+
+.secret-game-back {
+  margin-top: 18px;
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+  .secret-game-card {
+    min-height: 560px;
+
+    padding:
+      35px 20px;
+  }
+
+  .game-title {
+    font-size: 46px;
+  }
+
+  .game-description {
+    font-size: 18px;
+  }
+
+  .wheel-area {
+    transform: scale(0.88);
+
+    margin:
+      -10px auto -10px;
+  }
+
+  .wheel-result {
+    margin-top: 5px;
+  }
+
+}
+/* =========================================================
+   GLOBAL PAGE SCROLL — SHOW ALL CONTENT
+   ========================================================= */
+
+html {
+  min-height: 100%;
+  height: auto !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+
+body {
+  min-height: 100%;
+  height: auto !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+
+.page {
+  min-height: 100vh !important;
+  height: auto !important;
+
+  overflow-x: hidden !important;
+  overflow-y: visible !important;
+}
+
+/* Every normal section can grow with its content */
+
+section {
+  height: auto;
+  min-height: 100vh;
+}
+
+/* Secret game must NOT trap its content */
+
+.secret-game-section,
+.secret-game-section.show {
+  height: auto !important;
+  min-height: 100vh !important;
+
+  overflow: visible !important;
+}
+
+/* Game card grows according to content */
+
+.secret-game-card {
+  height: auto !important;
+  min-height: 100vh !important;
+
+  overflow: visible !important;
+
+  justify-content: flex-start !important;
+
+  padding-bottom: 80px !important;
+}
+
+/* Wheel content must remain fully visible */
+
+.wheel-step,
+.wish-step,
+.song-step,
+.game-summary-step {
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+/* Next button */
+
+.wheel-next-btn.show {
+  display: inline-block !important;
+  margin-top: 20px !important;
+  margin-bottom: 50px !important;
+}
+
+/* =========================================================
+   SAME BASE SIZE FOR NORMAL CARDS
+   ========================================================= */
+
+.card,
+.love-menu-card,
+.playlist-card,
+.reasons-card,
+.secret-lock-card,
+.final-message-card {
+
+  width: min(100%, 430px);
+  min-height: 590px;
+  height: auto;
+
+  box-sizing: border-box;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* Long cards can grow — page scroll handles the extra content */
+
+.reasons-card {
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+
+/* Secret game keeps its own scrolling behavior */
+
+.secret-game-card {
+  width: min(100%, 430px);
+  height: auto !important;
+  min-height: 590px;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* =========================================================
+   MAKE ALL MAIN CARDS VISIBLY LOOK LIKE CARDS
+   ========================================================= */
+
+.love-menu-card,
+.playlist-card,
+.reasons-card,
+.secret-lock-card,
+.secret-love-card,
+.secret-game-card,
+.final-message-card {
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border-radius: 28px;
+
+  border: 1px solid rgba(255, 255, 255, 0.9);
+
+  box-shadow:
+    0 20px 60px rgba(73, 126, 160, 0.15);
+
+  box-sizing: border-box;
+}
+
+/* FIX: 100 Reasons section scrolling */
+
+#reasonsSection {
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
+}
+
+#reasonsSection .reasons-card {
+  max-height: 88vh !important;
+  max-height: 88dvh !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  flex-shrink: 1;
+  scrollbar-width: thin;
+  scrollbar-color: var(--blue-dark) transparent;
+}
+
+.love-sticker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px auto;
+}
+
+.love-sticker img {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  display: block;
+}
+
+.angry-sticker {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  display: block;
+  margin: 10px auto;
+}
+
+/* Keep the No-click card the same size */
+.no-reaction-card {
+  width: 30%;
+  min-height: 500px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 35px 25px;
+}
+
+/* Keep the sticker in its place */
+.angry-sticker {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+  margin: 10px auto 20px;
+}
+
+/* Fix No-reaction card on mobile only */
+@media screen and (max-width: 380px) {
+  .no-reaction-card {
+    width: 100% !important;
+    min-height: 500px !important;
+    height: auto !important;
+    box-sizing: border-box !important;
+    padding: 35px 20px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .angry-sticker {
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+  }
+}
+
+
+/* =========================================
+   SECRET BETWEEN US — BIGGER LUCKY WHEEL
+   ========================================= */
+
+/* Make the complete wheel area bigger */
+#secretGameSection #wheelStep .wheel-area {
+  width: 400px !important;
+  height: 400px !important;
+  max-width: 100%;
+  margin: 12px auto 18px !important;
+  transform: none !important;
+  flex-shrink: 0;
+}
+
+/* Make the actual spinning wheel bigger */
+#secretGameSection #wheelStep .wheel-wrapper {
+  width: 360px !important;
+  height: 360px !important;
+  max-width: 100%;
+  flex-shrink: 0;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+/* Keep the wheel round */
+#secretGameSection #wheelStep .lucky-wheel {
+  width: 100% !important;
+  height: 100% !important;
+  box-sizing: border-box;
+}
+
+/* Make activity names clearer */
+#secretGameSection #wheelStep .wheel-label {
+  width: 82px !important;
+  margin-left: -41px !important;
+  margin-top: -10px !important;
+  font-family: "Cormorant Garamond", serif !important;
+  font-size: 13px !important;
+  line-height: 1.12 !important;
+  font-weight: 700 !important;
+  color: #334a5c !important;
+  overflow-wrap: anywhere;
+  z-index: 2;
+  transform:
+    rotate(var(--angle))
+    translateY(-110px)
+    rotate(calc(var(--angle) * -1)) !important;
+}
+
+/* Keep the heart in the centre properly sized */
+#secretGameSection #wheelStep .wheel-center {
+  width: 48px;
+  height: 48px;
+  z-index: 5;
+}
+
+/* =========================================
+   MOBILE FIX
+   ========================================= */
+
+@media screen and (max-width: 600px) {
+  #secretGameSection #wheelStep .wheel-area {
+    width: min(88vw, 400px) !important;
+    height: min(88vw, 400px) !important;
+    margin: 10px auto 16px !important;
+    transform: none !important;
+  }
+
+  #secretGameSection #wheelStep .wheel-wrapper {
+    width: calc(100% - 16px) !important;
+    height: calc(100% - 16px) !important;
+    padding: 4px;
+  }
+
+  #secretGameSection #wheelStep .wheel-label {
+    width: 76px !important;
+    margin-left: -38px !important;
+    font-size: clamp(10px, 3.2vw, 12px) !important;
+    line-height: 1.1 !important;
+    transform:
+      rotate(var(--angle))
+      translateY(calc(-1 * clamp(78px, 29vw, 100px)))
+      rotate(calc(var(--angle) * -1)) !important;
+  }
+}
+
+/* Extra-small phones */
+@media screen and (max-width: 350px) {
+  #secretGameSection #wheelStep .wheel-label {
+    width: 68px !important;
+    margin-left: -34px !important;
+    font-size: 10px !important;
+  }
+}
+
+/* FIX: SECRET GAME SECTION SCROLL */
+
+.secret-game-section.show {
+  height: 100vh !important;
+  height: 100dvh !important;
+  max-height: 100vh !important;
+  max-height: 100dvh !important;
+
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
+}
+
+/* Let the wheel and its buttons fit inside the scrollable section */
+.secret-game-section .secret-game-card {
+  height: auto !important;
+  min-height: 100vh !important;
+  max-height: none !important;
+  overflow: visible !important;
+  flex-shrink: 0;
+  padding-bottom: 80px !important;
+}
+
+/* Keep the complete wheel content visible */
+.secret-game-section .wheel-step {
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+/* ADJUST CONTENT POSITION FROM TOP */
+
+#secretGameSection .secret-game-card {
+  padding-top: 100px !important;
+}
